@@ -1,0 +1,29 @@
+WHAT IS IT
+==========
+An example to instrument a method using 'javassist' library.
+Official site : http://jboss-javassist.github.io/javassist/
+You can also check their github page at https://github.com/jboss-javassist/javassist
+
+WHY
+===
+To modify method behavior/code during compile time.
+
+WHEN TO USE IT
+==============
+I would suggest not to. It is better to take some effort to refactor the method or class to get the desired result.
+But when it is inevitable, there is a way. You can always instrument the method.
+
+ARE THERE OTHER LIBRARIES
+=========================
+Yes. You can try ASM (http://asm.ow2.org/index.html)
+
+HOW TO EXECUTE
+==============
+cd <to project directory>
+cd <to bin dir>
+jar cvfm instrumentation.jar ..\meta-inf\manifest.mf .
+java -cp .;./../lib/javassist-3.14.0-GA.jar -javaagent:./instrumentation.jar com.sasanka.a.TestClassToBeInstrumented
+
+Here method1() is instrumented. 
+So rather than printing what is in the method's print statement, it prints the updated print statement as per TransformerClass.
+

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Built-By: Cycle
+Build-Jdk: 1.7.0_79
+premain-class: com.sasanka.a.AgentClass
+Created-By: Sasanka
